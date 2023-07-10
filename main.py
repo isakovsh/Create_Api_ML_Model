@@ -4,9 +4,14 @@ import numpy as np
 
 with open("model.pkl","rb") as file:
     model = pickle.load(file)
-data = np.asanyarray(6, 148, 72, 35, 0, 33.6, 0.627, 50, 1)
-data= data.reshape(1,-1)
-result = model.predict([])
 
-print(result)
 
+def predict_func(data: list):
+    """
+    A pre-trained model
+    https://github.com/isakovsh/MachineLearning-Classification/blob/main/Diabet%20Classfication/diabet.ipynb
+    """
+    data = np.asanyarray(data)
+    data = data.reshape(1,-1)
+    result = model.predict(data)
+    return result
