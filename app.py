@@ -44,7 +44,7 @@ def predict_diabetes(data: DiabetesData):
     else:
         result = "Diabetic"
 
-    return {"result": result}
+    return result
 
 if __name__ == "__main__":
     import uvicorn
